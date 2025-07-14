@@ -1,0 +1,23 @@
+
+.day-temperature-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
+}
+.day-temperature-data div {
+    background: #ffffff20;
+    padding: 10px;
+    border-radius: 15px;
+    width: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+.forecast-date{
+    font-size: 18px;
+    font-weight: bold;
+}

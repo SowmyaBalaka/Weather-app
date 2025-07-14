@@ -1,0 +1,8 @@
+<div *ngIf="weatherData!=null" class="day-temperature-data">
+    <div *ngFor="let day of weatherData.forecast.forecastday">
+        <img *ngIf="day.day.condition.icon" [src]="'https:'+day.day.condition.icon" alt="">
+        <p class="forecast-date">{{day.date}}</p>
+        <p>max-temperature : <strong>{{day.day.maxtemp_c}} C</strong></p>
+        <p>min-temperature : <strong>{{day.day.mintemp_c}} C</strong></p>
+    </div>
+</div>

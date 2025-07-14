@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, #52a7f1, #bcf5f7);
+    width: 80vw;
+    height: auto;
+    margin: 30px auto;
+    background-color: rgb(213, 233, 250);
+    padding: 20px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+}
+@media (max-width: 480px)  {
+    .container{
+        height: auto; 
+
+    }
+
+}
+
