@@ -1,4 +1,35 @@
-# WeatherForecastApp
+# 🌦️ Angular Weather Forecast App
+
+A simple and responsive weather forecast application built with **Angular**, fetching real-time weather data from [WeatherAPI.com](https://www.weatherapi.com/) and displaying a **6-day forecast** based on user input.
+
+
+---
+
+## 🚀 Features
+
+- 🔍 Search weather by city name
+- 🌤️ View **current weather** and **6-day forecast**
+- 📅 Forecast includes temperature, condition, humidity, wind, etc.
+- 📱 Responsive layout for desktop and mobile
+- 🔁 Real-time API calls using Angular `HttpClient`
+
+---
+
+## 🛠️ Tech Stack
+
+- [Angular](https://angular.io/)
+- [WeatherAPI.com](https://www.weatherapi.com/)
+- HTML + SCSS
+
+---
+
+## ⚙️ Setup & Run Locally
+
+### 🔧 Prerequisites
+
+- Node.js & npm
+- Angular CLI installed globally (`npm install -g @angular/cli`)
+- API key from [WeatherAPI.com](https://www.weatherapi.com/)
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
