@@ -25,7 +25,7 @@ export class CurrentTemperature {
         this.weatherData=data;
         this.loading=false;
       },(err)=>{
-        this.error="Failed to fetch weather Data. please try again.";
+        this.error=err.error.error.message;
         this.weatherData=null;
         this.loading=false;
       }
@@ -42,7 +42,8 @@ export class CurrentTemperature {
         this.error='';
         console.log(this.weatherData);
       }
-      ,(err)=>{this.error="Failed to fetch weather data . Please try again .";
+      ,(err)=>{this.error=err.error.error.message;
+        console.log(err)
         this.loading=false;
         this.weatherData=null;
       }

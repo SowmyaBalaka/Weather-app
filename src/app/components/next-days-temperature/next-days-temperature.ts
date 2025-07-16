@@ -9,9 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class NextDaysTemperature {
     @Input() weatherData:any
-    ngOnInit(){
-      if(this.weatherData!=null){
-        console.log(this.weatherData.forecast);
-      }
-    }
+    // ngOnInit(){
+    //   if(this.weatherData!=null){
+    //     console.log(this.weatherData.forecast);
+    //   }
+    // }
 }

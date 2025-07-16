@@ -18,7 +18,7 @@ export class App {
   apiKey='36857eeedca446c3941101409251007';
   data:any=[];
 
-  constructor(private weatherService:WeatherService){}
+  constructor(){}
 
   // getDetails(){
   //   this.weatherService.getWeather('landon').subscribe(
