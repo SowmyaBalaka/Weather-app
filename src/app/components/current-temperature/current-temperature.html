@@ -1,8 +1,9 @@
 <div class="weather-data-container">
-    <div class="search-bar">
+    <!-- <div class="search-bar">
         <input type="text" placeholder="search.." [(ngModel)]="cityName">
         <button type="submit" (click)="getWeatherDetails(cityName)">search</button>
-    </div>
+    </div> -->
+    <app-search (searcheCityName)="getWeatherDetails($event)"></app-search>
     <div *ngIf="loading" class="loader"></div>
     <div *ngIf="error" class="error">{{error}}</div>
     <div class="top-content">
@@ -35,7 +36,7 @@
             </div>
         </div>
         <div class="bottom-content">
-            <app-next-days-temperature [weatherData]="weatherData"/>
+            <app-next-days-temperature/>
         </div>
     </div>
 </div>

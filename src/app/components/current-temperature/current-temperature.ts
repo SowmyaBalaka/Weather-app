@@ -3,10 +3,12 @@ import { WeatherService } from '../../services/weather-service';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { NextDaysTemperature } from '../next-days-temperature/next-days-temperature';
+import { SharedWeather } from '../../services/shared-weather';
+import { Search } from '../search/search';
 
 @Component({
   selector: 'app-current-temperature',
-  imports: [FormsModule,NgIf,NextDaysTemperature],
+  imports: [FormsModule,NgIf,NextDaysTemperature,Search],
   templateUrl: './current-temperature.html',
   styleUrl: './current-temperature.scss'
 })
@@ -16,7 +18,7 @@ export class CurrentTemperature {
   weatherData:any;
   loading:boolean=false;
 
-  constructor(private weatherService:WeatherService){}
+  constructor(private weatherService:WeatherService,private shareService:SharedWeather){}
 
   ngOnInit(){
     this.loading=true;
@@ -24,10 +26,9 @@ export class CurrentTemperature {
       (data)=>{
         this.weatherData=data;
         this.loading=false;
+        this.shareService.sendForecastData(data);
       },(err)=>{
-        this.error=err.error.error.message;
-        this.weatherData=null;
-        this.loading=false;
+        this.handelError(err);
       }
 
     );
@@ -41,12 +42,21 @@ export class CurrentTemperature {
         this.loading=false;
         this.error='';
         console.log(this.weatherData);
+        this.shareService.sendForecastData(data);
       }
-      ,(err)=>{this.error=err.error.error.message;
-        console.log(err)
-        this.loading=false;
-        this.weatherData=null;
+      ,(err)=>{
+        this.handelError(err);
       }
     )
+  }
+  handelError(err:any){
+    if(!navigator.onLine){
+      this.error="You're offline . Please check Your Connection";
+    }else if(err.error.error.message){
+      this.error=err.error.error.message;
+    }
+    this.loading=false;
+        this.weatherData=null;
+        this.shareService.sendForecastData(null);
   }
 }
